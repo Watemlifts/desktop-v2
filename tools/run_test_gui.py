@@ -5,12 +5,10 @@
 # ------------------------------------------------------------------------------
 # Purpose: runs TestGui
 
-import glob2
 import os
 import re
 import sys
 import time
-import zipfile
 
 TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(TOOLS_DIR)
