@@ -29,7 +29,7 @@ class ArgHelper:
     OPTION_NO_COM = "--no-com"
     OPTION_NO_INSTALLER = "--no-installer"
 
-    options = list()
+    options = []
     options.append(("\nGeneral", ""))
     options.append((OPTION_HELP, "Prints this help menu"))
     options.append((OPTION_CLEAN_ONLY, "Cleans the temporary files created during building"))
