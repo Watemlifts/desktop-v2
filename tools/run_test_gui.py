@@ -73,7 +73,6 @@ def CopyTestGuiFiles(configdata, qt_root, msvc_root, crt_root, targetDir):
       CopyFiles("Qt", configdata["qt_files"], qt_root, targetDir, strip_first_dir=True)
   if "msvc_files" in configdata:
     CopyFiles("MSVC", configdata["msvc_files"], msvc_root, targetDir)
-  # utl.CopyAllFiles(crt_root, targetDir) # api-ms-win-...dlls
   if "lib_files" in configdata:
     for k, v in configdata["lib_files"].iteritems():
       lib_root = iutl.GetDependencyBuildRoot(k)

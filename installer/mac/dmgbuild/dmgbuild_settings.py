@@ -67,7 +67,6 @@ files = [ application ]
 # pyobjc-framework-Quartz, and will increase dmg size by ~2.5MB
 #
 icon = icon_from_app(application)
-#badge_icon = icon_from_app(application)
 
 # Where to put the icons
 icon_locations = {
