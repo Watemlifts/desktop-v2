@@ -345,7 +345,7 @@ def build_component(component, is_64bit, qt_root, buildenv=None, macdeployfixes=
             if c_target:
                 outdir = proc.ExecuteAndGetOutput(["xcodebuild -project {} -showBuildSettings | " 
                                                    "grep -m 1 \"BUILT_PRODUCTS_DIR\" | " 
-                                                   "grep -oEi \"\/.*\"".format(c_project)], shell=True)
+                                                   r"grep -oEi \"\/.*\"".format(c_project)], shell=True)
                 if c_target.endswith(".app"):
                     utl.CopyMacBundle(os.path.join(outdir, c_target), os.path.join(temp_wd, c_target))
                 else:
@@ -443,7 +443,7 @@ def build_auth_helper_win32(configdata, targetlist):
             # >> work/client-desktop/gui/authhelper/<projectname>/Release/<libs>
             build_cmd = [
                 "msbuild.exe", get_project_file(c_subdir, c_project),
-                "/p:OutDir=..\Release{}".format(os.sep),
+                r"/p:OutDir=..\Release{}".format(os.sep),
                 "/p:Configuration={}".format("Release"), "-nologo", "-verbosity:m"
             ]
             iutl.RunCommand(build_cmd, env=buildenv, shell=True)

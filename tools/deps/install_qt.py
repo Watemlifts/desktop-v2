@@ -63,8 +63,8 @@ def BuildDependencyMSVC(installpath, openssl_root, outpath):
   # Configure.
   configure_cmd = \
     ["configure.bat", "-opensource", "-confirm-license", "-openssl", "-nomake", "examples"]
-  configure_cmd.extend(["-I", "{}\include".format(openssl_root)])
-  configure_cmd.extend(["-L", "{}\lib".format(openssl_root)])
+  configure_cmd.extend(["-I", r"{}\include".format(openssl_root)])
+  configure_cmd.extend(["-L", r"{}\lib".format(openssl_root)])
   configure_cmd.extend(["-prefix", installpath])
   if QT_SKIP_MODULES:
     configure_cmd.extend(x for t in zip(["-skip"] * len(QT_SKIP_MODULES), QT_SKIP_MODULES) for x in t)
