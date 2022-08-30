@@ -158,7 +158,7 @@ def GetVisualStudioEnvironment(architecture="x86"):
   result = None
   for batfile in [
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat",
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\Auxiliary\\Build\\vcvarsall.bat"
+    r"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\Auxiliary\\Build\\vcvarsall.bat"
   ]:
     if os.path.isfile(batfile):
       process = subprocess.Popen(
