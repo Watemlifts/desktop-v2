@@ -32,7 +32,6 @@ CARES_CONFIGS = {
 
 
 def BuildDependencyMSVC(outpath):
-  global DEP_FILE_MASK
   for prefix, params in CARES_CONFIGS.iteritems():
     msg.HeadPrint("Building: {} ({} {})".format(prefix, params[0], params[1]))
     # Create an environment with VS vars.
@@ -52,7 +51,6 @@ def BuildDependencyMSVC(outpath):
 
 
 def BuildDependencyGNU(outpath):
-  global DEP_FILE_MASK
   # Create an environment with CC flags.
   buildenv = os.environ.copy()
   args = ""
